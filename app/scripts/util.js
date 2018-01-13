@@ -19,3 +19,14 @@ exports.copyTextToClipboard = function(textVal){
 
     return retVal;
 }
+
+exports.isInformativePage = function(url){
+    console.log(url);
+    if(url.match(/chrome:\/\/extensions\/.*/)){   // chrome extensionのページはコピーしない。
+        return false;
+    }
+    if(url.match(/.*google.*search?.*/)){   // google searchの結果ページはコピーしない。
+        return false;
+    }
+    return true;
+}

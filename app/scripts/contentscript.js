@@ -4,28 +4,44 @@
 const jquery = require('jquery');
 window.$ = window.jQuery = jquery;
 const util = require('./util');
+const Rx = require('rxjs');
+const R = require('ramda');
 
 
 function getHeadingText(){
     return $("title").text().replace(/\n/g, "").replace(/^ +/, "").replace(/ +$/g, "")
 }
 
-$(document).keydown(function(event){
-    if(event.ctrlKey){
-        if(event.shiftKey){
-            if(event.key === "Y"){
-                chrome.runtime.sendMessage({method: "copyUrlOfAllTab"}, function(response) {});
+function sendMessage(keyboardEvent){
+    if(keyboardEvent.ctrlKey){
+        if(keyboardEvent.shiftKey){
+            if(keyboardEvent.key === "Y"){
+                chrome.runtime.sendMessage({method: "copyUrlOfAllTab"}, response=>{});
             }
         }else{
-            if(event.key === "y"){
+            if(keyboardEvent.key === "y"){
                 util.copyTextToClipboard("- [" + getHeadingText() + "](" + decodeURIComponent(location.href) + ")");
-            }else if(event.key === "c"){
-                util.copyTextToClipboard(getHeadingText());
-            }else if(event.key === "q"){
+            }else if(keyboardEvent.key === "c"){
                 util.copyTextToClipboard(decodeURIComponent(location.href));
             }
         }
     }
-})
-
 }
+
+// $(document).keydown(function(event){
+//     sendMessage(event);
+// })
+
+
+// 以下は、リアクティブな書き方。
+$(document).ready(()=>{
+    Rx.Observable.fromEvent(document, 'keydown')
+        .map(R.tap(sendMessage))
+        .subscribe(
+            x => console.log(x),
+            err => console.log('[Error] ' + err),
+            () => console.log('[complete]'));
+    }
+)
+}
+

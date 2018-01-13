@@ -57,6 +57,8 @@
     "yargs": "^8.x.x"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "ramda": "^0.25.0",
+    "rxjs": "^5.5.6"
   }
 }
