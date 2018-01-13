@@ -36,9 +36,8 @@ function sendMessage(keyboardEvent){
 // 以下は、リアクティブな書き方。
 $(document).ready(()=>{
     Rx.Observable.fromEvent(document, 'keydown')
-        .map(R.tap(sendMessage))
         .subscribe(
-            x => console.log(x),
+            event => sendMessage(event),
             err => console.log('[Error] ' + err),
             () => console.log('[complete]'));
     }
