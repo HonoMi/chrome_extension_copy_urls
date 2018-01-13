@@ -5,7 +5,6 @@ const jquery = require('jquery');
 window.$ = window.jQuery = jquery;
 const util = require('./util');
 const Rx = require('rxjs');
-const R = require('ramda');
 
 
 function getHeadingText(){
