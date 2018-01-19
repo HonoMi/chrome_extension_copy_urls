@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "chrome_extension_show_meta_info",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "show_meta",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "Show meta information of the page. Query words used to reach this page, title, ..etc.",
+    "description": "The description of the application"
+  }
+}
