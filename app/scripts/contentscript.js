@@ -20,9 +20,9 @@ function sendMessage(keyboardEvent){
         }else{
             if(keyboardEvent.key === "y"){
                 util.copyTextToClipboard("- [" + getHeadingText() + "](" + decodeURIComponent(location.href) + ")");
-            }/*else if(keyboardEvent.key === "c"){  // This overrides ordinal ctrl+c. DO NOT.
+            }else if(keyboardEvent.key === "u"){  // This overrides ordinal ctrl+c. DO NOT.
                 util.copyTextToClipboard(decodeURIComponent(location.href));
-            }*/
+            }
         }
     }
 }
