@@ -1,11 +1,6 @@
-/* https://github.com/underground0930/chrome_show_google_query_words_metaCheckMan */
-#show_google_query_words_meta{
-  z-index:99999;
-  padding: 5px 20px 5px;
-  background-color:rgba(0,0,0,0.70);
-  position:fixed;
-  color:#fff;
-  right:0;
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJjb250ZW50c2NyaXB0LnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiIl0sImZpbGUiOiJjb250ZW50c2NyaXB0LmNzcyJ9 */
+ right:0;
   top:0;
   font-size:16px;
   width: 200px;
