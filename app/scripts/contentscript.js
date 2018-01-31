@@ -18,9 +18,10 @@ function sendMessage(keyboardEvent){
                 chrome.runtime.sendMessage({method: "copyUrlOfAllTab"}, response=>{});
             }
         }else{
+            console.log(keyboardEvent.key);
             if(keyboardEvent.key === "y"){
                 util.copyTextToClipboard("- [" + getHeadingText() + "](" + decodeURIComponent(location.href) + ")");
-            }else if(keyboardEvent.key === "u"){  // This overrides ordinal ctrl+c. DO NOT.
+            }else if(keyboardEvent.key === "7"){  // This overrides ordinal ctrl+c. DO NOT.
                 util.copyTextToClipboard(decodeURIComponent(location.href));
             }
         }
