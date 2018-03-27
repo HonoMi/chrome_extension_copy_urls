@@ -57,6 +57,7 @@
     "yargs": "^8.x.x"
   },
   "dependencies": {
+    "babel-register": "^6.26.0",
     "jquery": "^3.2.1",
     "ramda": "^0.25.0",
     "rxjs": "^5.5.6"
