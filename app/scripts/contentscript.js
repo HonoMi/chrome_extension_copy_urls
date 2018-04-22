@@ -8,7 +8,12 @@ const Rx = require('rxjs');
 
 
 function getHeadingText(){
-    return $("title").text().replace(/\n/g, "").replace(/^ +/, "").replace(/ +$/g, "")
+    return $("title")
+        .filter((index, vlaue) => index == 0)
+        .text()
+        .replace(/\n/g, "")
+        .replace(/^ +/, "")
+        .replace(/ +$/g, "")
 }
 
 function sendMessage(keyboardEvent){
